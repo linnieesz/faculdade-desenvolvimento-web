@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <title>Dados de informação do doador</title>
+
+    <style>
+        .label-title {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+
+    <script>
+
+        function calcularIdade() {
+            const dateBirth = new Date(document.getElementById('birthday').value);
+            const dateToday = new Date();
+            const yearsOld = dateToday.getFullYear() - dateBirth.getFullYear();
+
+            document.getElementById('yearsOld').value = yearsOld;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <div>
+            <h1>Dados de Informações do Doador</h1>
+            <h2>Dados de Informações</h2>
+        </div>
+
+        <div id="form">
+            <form>
+                <div>
+                    <label class="label-title" for="name">Nome:</label>
+                    <input type="text" id="name" name="name" value="" required>
+                </div>
+
+                <div>
+                    <label class="label-title" for="user">Usuário:</label>
+                    <input type="text" id="user" name="user" value="" required>
+                </div>
+
+                <div>
+                    <label class="label-title" for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" value="" required>
+                </div>
+
+                <div>
+                    <label class="label-title" for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" value="" required>
+                </div>
+
+                <div>
+                    <label class="label-title" for="telephone">Telefone:</label>
+                    <input type="text" id="telephone" name="telephone" value="51-" required>
+                </div>
+
+                <div>
+                    <label class="label-title" for="birthday">Data de Nascimento:</label>
+                    <input type="date" id="birthday" name="birthday" onblur="calcularIdade()" required>
+
+                    <label for="yearsOld">Idade: </label>
+                    <input type="text" name="yearsOld" id="yearsOld" disabled></input>
+                    <!-- calcular a idade -->
+                </div>
+
+                <div>
+                    <label class="label-title" for="weight">Peso(kg):</label>
+                    <input type="" id="weight" name="weight" value="" required>
+                </div>
+
+                <div>
+                    <label class="label-title" for="bloodType">Tipo sanguíneo:</label>
+                    <select name="bloodType" id="bloodType">
+                        <option value=""> >> Selecione um tipo sanguíneo << </option>
+                        <option value="typeO">O</option>
+                        <option value="typeA">A</option>
+                        <option value="typeB">B</option>
+                        <option value="typeAb">AB</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="label-title" for="rhFactor">Fator RH:</label>
+                    <select name="rhFactor" id="rhFactor">
+                        <option value=""> >> Selecione um tipo de RH << </option>
+                        <option value="typePositive">+</option>
+                        <option value="typeNegative">-</option>
+                    </select>
+                </div>
+
+                <div>
+                    <input type="radio" id="fem" name="gender" value="feminino">
+                    <label for="fem">Feminino</label>
+    
+                    <input type="radio" id="masc" name="gender" value="masculino">
+                    <label for="masc">Masculino</label>
+                </div>
+
+                <div>
+                    <label  class="label-title" for="masc">Número do documento:</label>
+                    <input type="text" id="identity" name="identity"><br />
+                </div>
+
+                <fieldset style="width: 500px;">
+                    <legend>Informações adicionais:</legend>
+                    <input type="checkbox" id="infoOne" name="infoOne" value="infoOne">
+                    <label for="infoOne">Estar descansado (ter dormido pelo menos 6 horas nas últimas 24 horas)</label><br>
+    
+                    <input type="checkbox" id="infoTwo" name="infoTwo" value="infoTwo">
+                    <label for="infoTwo">Estar alimentado, evitando alimentos gordurosos</label><br>
+    
+                    <input type="checkbox" id="infoThree" name="infoThree" value="infoThree">
+                    <label for="infoThree">Não tem com anemia no teste realizado imediatamente antes da doação
+                    </label><br>
+    
+                    <input type="checkbox" id="infoFour" name="infoFour" value="infoFour">
+                    <label for="infoFour">Não tem com anemia no teste realizado imediatamente antes da doação
+                    </label><br>
+    
+                    <input type="checkbox" id="infoFive" name="infoFive" value="infoFive">
+                    <label for="infoFive">Não tem com anemia no teste realizado imediatamente antes da doação
+                    </label><br>
+    
+                    <input type="checkbox" id="infoSix" name="infoSix" value="infoSix">
+                    <label for="infoSix">Não tem com anemia no teste realizado imediatamente antes da doação
+                    </label><br>
+                </fieldset>
+
+                <div>
+                    <label class="label-title" for="observation">Observações: </label> <br>
+                    <textarea id="observation" name="observation" rows="15" cols="40"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
